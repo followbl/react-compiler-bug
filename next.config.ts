@@ -1,7 +1,19 @@
-import type { NextConfig } from "next";
+const nextConfig = {
+    pageExtensions: ["ts", "tsx", "md"],
+    reactStrictMode: true,
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+    experimental: {
+        ppr: true,
+        dynamicOnHover: true,
+        reactCompiler: true,
+    },
+    eslint: { ignoreDuringBuilds: true },
+    typescript: { ignoreBuildErrors: true },
+    productionBrowserSourceMaps: false,
+    poweredByHeader: false,
+    turbopack: {
+        resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
+    },
+}
 
-export default nextConfig;
+export default nextConfig
